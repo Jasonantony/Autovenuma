@@ -1,0 +1,95 @@
+/* =========================
+   AUTH PAGES (LOGIN / REGISTER)
+   SAME STYLE AS LOGIN PAGE
+   ========================= */
+
+.auth-page {
+    min-height: calc(100vh - 70px);
+    /* navbar height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #FFD84D, #FFE9A0);
+    padding: 40px 15px;
+}
+
+/* Main card */
+.auth-card {
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Lift effect */
+.auth-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 35px 75px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+.auth-card h3 {
+    font-weight: 700;
+    color: #000;
+}
+
+/* Subtitle */
+.auth-card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Inputs */
+.auth-card .form-control {
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+/* Input focus */
+.auth-card .form-control:focus {
+    border-color: #FFB703;
+    box-shadow: 0 0 0 0.2rem rgba(255, 183, 3, 0.25);
+}
+
+/* Yellow button */
+.auth-card .btn-warning {
+    background: #FFB703;
+    border: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 12px;
+    transition: all 0.25s ease;
+}
+
+/* Button hover */
+.auth-card .btn-warning:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 183, 3, 0.45);
+}
+
+/* Links */
+.auth-card a {
+    color: #FFB703;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-card a:hover {
+    text-decoration: underline;
+}
+
+/* Small text */
+.auth-card .small {
+    font-size: 0.85rem;
+}
+
+/* Mobile tweaks */
+@media (max-width: 576px) {
+    .auth-card {
+        padding: 1.75rem !important;
+    }
+}
