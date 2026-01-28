@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block title %}Login | AutoVenuma{% endblock %}
+
+{% block head %}
+<style>
+    /* LOGIN PAGE ONLY */
+    .login-page {
+        min-height: calc(100vh - 70px);
+        /* navbar height */
+        background: linear-gradient(135deg, #FFD84D, #FFE9A0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 15px;
+    }
+
+    /* CARD */
+    .login-card {
+        width: 100%;
+        max-width: 1000px;
+        background: white;
+        border-radius: 18px;
+        display: flex;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, .15);
+    }
+
+    /* LEFT SIDE */
+    .login-left {
+        flex: 1;
+        background: #FFB703;
+        padding: 50px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .login-left h2 {
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    /* RIGHT SIDE */
+    .login-right {
+        flex: 1;
+        padding: 50px;
+    }
+
+    /* BUTTON */
+    .login-right .btn-warning {
+        transition: all 0.2s ease;
+    }
+
+    .login-right .btn-warning:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255, 183, 3, 0.4);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+        .login-card {
+            flex-direction: column;
+        }
+
+        .login-left {
+            padding: 30px;
+        }
+
+        .login-right {
+            padding: 30px;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- LOGIN PAGE WRAPPER -->
+<section class="login-page">
+    <div class="login-card">
+
+        <!-- LEFT -->
+        <div class="login-left">
+            <h2>AutoVenuma 💛</h2>
+            <p>
+                Auto venuma?<br>
+                One tap-la booking pannunga.<br>
+                Safe. Simple. Smooth.
+            </p>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="login-right">
+            <h4 class="mb-4">Login to your account</h4>
+
+            <form>
+                <input type="email" class="form-control mb-3" placeholder="Email">
+                <input type="password" class="form-control mb-3" placeholder="Password">
+
+                <div class="d-flex justify-content-between mb-3 small">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="text-warning">Forgot password?</a>
+                </div>
+
+                <button class="btn btn-warning w-100 fw-bold">Login</button>
+            </form>
+
+            <p class="text-center mt-3 small">
+                New here?
+                <a href="{% url 'home:register' %}" class="text-warning fw-bold">
+                    Create an account
+                </a>
+            </p>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

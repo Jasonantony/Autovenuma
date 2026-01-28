@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% block title %}Register | AutoVenuma{% endblock %}
+
+{% block head %}
+<style>
+    /* REGISTER PAGE ONLY (same as login) */
+    .register-page {
+        min-height: calc(100vh - 70px);
+        background: linear-gradient(135deg, #FFD84D, #FFE9A0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 15px;
+    }
+
+    .register-card {
+        width: 100%;
+        max-width: 1000px;
+        background: white;
+        border-radius: 18px;
+        display: flex;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, .15);
+    }
+
+    .register-left {
+        flex: 1;
+        background: #FFB703;
+        padding: 50px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .register-left h2 {
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .register-right {
+        flex: 1;
+        padding: 50px;
+    }
+
+    .register-right .btn-warning {
+        transition: all 0.2s ease;
+    }
+
+    .register-right .btn-warning:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255, 183, 3, 0.4);
+    }
+
+    @media (max-width: 768px) {
+        .register-card {
+            flex-direction: column;
+        }
+
+        .register-left {
+            padding: 30px;
+        }
+
+        .register-right {
+            padding: 30px;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- REGISTER PAGE WRAPPER -->
+<section class="register-page">
+    <div class="register-card">
+
+        <!-- LEFT -->
+        <div class="register-left">
+            <h2>AutoVenuma 💛</h2>
+            <p>
+                AutoVenuma family-ku welcome! 🎉<br>
+                One-time register pannina podhum.<br>
+                Easy. Fast. Friendly.
+            </p>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="register-right">
+            <h4 class="mb-4">Create your account</h4>
+
+            <form method="post">
+                {% csrf_token %}
+
+                <input type="text" class="form-control mb-3" placeholder="Full Name" required>
+
+                <input type="tel" class="form-control mb-3" placeholder="Mobile Number" required>
+
+                <input type="email" class="form-control mb-3" placeholder="Email" required>
+
+                <input type="password" class="form-control mb-3" placeholder="Password" required>
+
+                <input type="password" class="form-control mb-3" placeholder="Confirm Password" required>
+
+                <button type="submit" class="btn btn-warning w-100 fw-bold">
+                    Create Account
+                </button>
+            </form>
+
+            <p class="text-center mt-3 small">
+                Already have an account?
+                <a href="{% url 'home:login' %}" class="text-warning fw-bold">
+                    Login here
+                </a>
+            </p>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,156 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{%block head%}
+<style>
+    .container#Banner {
+
+        background-size: cover;
+        background-position: center;
+        margin: 1em auto;
+        height: 400px;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        border-radius: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: rgb(1, 1, 1);
+
+    }
+
+    #Banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("{% static 'bann.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        filter: blur(5px);
+        /* BLUR LEVEL */
+        transform: scale(1.1);
+        z-index: -1;
+    }
+
+    #Banner::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: black;
+        background: rgba(0, 0, 0, 0.35);
+        /* adjustable */
+        z-index: 0;
+    }
+
+    #kathai {
+        margin-top: 2em;
+        
+        padding: 1em;
+        border-radius: 10px;
+        background-color: #FFB703;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Banner Section -->
+<div class="container" id="Banner">
+    <div class="text-white py-5 mb-4">
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold" style="color: #ddff00;">Autovenumaa</h1>
+            <span>Fair price. Fast ride. AutoVenuma.</span>
+            <p class="mt-3 fs-4" style="color: black;">
+                Salem la “auto varuma?” nu kekka vendam. Oru click panninaa auto
+                “vaa machi!” nu gate-la nikum. <br>unga friend mathiri, aana on-time!
+            </p>  
+        </div>
+    </div>
+</div>
+
+<!-- Short story.. -->
+<div class="container" id="kathai">
+    <h2 class="text-center mb-4">Our Story</h2>
+    <p>
+        Naan Jason, oru auto driver oda paiyan.
+        Drivers daily face panra kashtam paathu, “namma fare-la nadakkura namma own app venum” nu decide pannen.
+        Romba naal try pannittu, finally Autovenuma born aayiduchu —
+        Salem-la oru click panninaa auto ready… driver-kum fair, passenger-kum care!
+    </p>
+</div>
+
+<!-- How it works -->
+<div class="container-fluid py-5" style="backdrop-filter: blur;">
+    <h2 class="text-center mb-4">How it works..!</h2>
+
+    <div class="container border rounded p-4" style="background-color: #FFB703;">
+        <div class="row align-items-center justify-content-center g-4">
+
+            <!-- Step 1 -->
+            <div class="col-12 col-md-4">
+                <div class="card h-100 text-center">
+                    <img src="..." class="card-img-top img-fluid" alt="Step 1">
+                    <div class="card-body">
+                        <h6 class="fw-bold">1️⃣ App open pannitu booking pannunga</h6>
+                        <p class="card-text">
+                            App open pannitu pickup & drop select pannunga.
+                            Amount check pannitu payment pannina, booking instant-ah confirm aagidum.
+                            Simple-ah, tension illa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arrow (Desktop only) -->
+            <div class="col-md-1 d-none d-md-flex justify-content-center">
+                <img src="{% static 'right-arrow.png' %}" class="img-fluid" style="max-width: 40px;" alt="arrow">
+            </div>
+
+            <!-- Step 2 -->
+            <div class="col-12 col-md-4">
+                <div class="card h-100 text-center">
+                    <img src="..." class="card-img-top img-fluid" alt="Step 2">
+                    <div class="card-body">
+                        <h6 class="fw-bold">2️⃣ Driver anna gate-ku varuvanga</h6>
+                        <p class="card-text">
+                            Booking aana udane driver anna accept pannuvanga and straight-ah unga gate-ku varuvanga.
+                            Auto-la yerumbodhu OTP sollunga — safety-ku adhu dhaan enough.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arrow (Desktop only) -->
+            <div class="col-md-1 d-none d-md-flex justify-content-center">
+                <img src="{% static 'right-arrow.png' %}" class="img-fluid" style="max-width: 40px;" alt="arrow">
+            </div>
+
+            <!-- Step 3 -->
+            <div class="col-12 col-md-4">
+                <div class="card h-100 text-center">
+                    <img src="..." class="card-img-top img-fluid" alt="Step 3">
+                    <div class="card-body">
+                        <h6 class="fw-bold">3️⃣ Safe-ah reach pannuvanga, rating podunga</h6>
+                        <p class="card-text">
+                            Destination safe-ah reach pannuvanga.
+                            Ride nalla irundhaal driver anna-ku rating podunga —
+                            unga one click-u avanga day-e super-aa maathidum!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
